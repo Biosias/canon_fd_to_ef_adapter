@@ -49,17 +49,17 @@ module screw_hole(screw_head_radius=10, screw_radius=5, h_height=18){
 	}
 }
 
-green_outer_radius=57;
-green_inner_radius=54;
+green_outer_radius=28.5;
+green_inner_radius=24.5;
 green_height=10;
 
 blue_plate_height=1;
 
-red_height=10;
-red_outer_radius=40;
-red_inner_radius=32;
+red_height=5;
+red_outer_radius=20;
+red_inner_radius=12;
 
-holder_width=8.5;
+holder_width=4;
 holder_height=2;
 number_of_holders=3;
 holder_angular_length=50;
