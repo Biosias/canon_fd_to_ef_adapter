@@ -49,15 +49,15 @@ module screw_hole(screw_head_radius=10, screw_radius=5, h_height=18){
 	}
 }
 
-green_outer_radius=28.5;
-green_inner_radius=24.5;
-green_height=10;
+green_outer_radius=30;
+green_inner_radius=27.20;
+green_height=2;
 
 blue_plate_height=1;
 
 red_height=5;
 red_outer_radius=20;
-red_inner_radius=12;
+red_inner_radius=16.5;
 
 holder_width=4;
 holder_height=2;
@@ -67,6 +67,15 @@ holder_angular_length=50;
 screw_head_radius=3/2;
 screw_radius=1.7/2;
 screw_distance=red_outer_radius;
+
+screw_distance_from_center = red_outer_radius + 5.5;
+screw_centerdistance1 = 0.5 + screw_distance_from_center;
+screw_centerdistance2 = screw_distance_from_center;
+screw_centerdistance3 = 0.5 + screw_distance_from_center;
+
+screw_1_angle = 34;
+screw_2_angle = -66;
+screw_3_angle = 148;
 
 difference(){
 	union(){
@@ -105,17 +114,17 @@ difference(){
   	}
 	
 	// Screw 1
-	rotate([0,0,34])
-	translate([0,red_outer_radius,green_height/2+blue_plate_height/2])
+	rotate([0,0,screw_1_angle])
+	translate([0,screw_centerdistance1,green_height/2+blue_plate_height/2])
 	screw_hole(screw_head_radius=screw_head_radius, screw_radius=screw_radius, h_height=blue_plate_height+blue_plate_height/6+red_height);
 	
 	// Screw 2
-	rotate([0,0,-65])
-	translate([0,red_outer_radius,green_height/2+blue_plate_height/2])
+	rotate([0,0,screw_2_angle])
+	translate([0,screw_centerdistance2,green_height/2+blue_plate_height/2])
 	screw_hole(screw_head_radius=screw_head_radius, screw_radius=screw_radius, h_height=blue_plate_height+blue_plate_height/6+red_height);
 	
 	// Screw 3
-	rotate([0,0,-175])
-	translate([0,red_outer_radius,green_height/2+blue_plate_height/2])
+	rotate([0,0,screw_3_angle])
+	translate([0,screw_centerdistance3,green_height/2+blue_plate_height/2])
 	screw_hole(screw_head_radius=screw_head_radius, screw_radius=screw_radius, h_height=blue_plate_height+blue_plate_height/6+red_height);
 }
